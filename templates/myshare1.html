@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CQUCloud——资源社区</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="images/logo.png">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="images/logo.png">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="images/logo.png">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo.png">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/logo.png">
+    <!-- Styles -->
+    <link href="assets/fontAwesome/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/lib/mmc-chat.css" rel="stylesheet" />
+    <link href="assets/css/lib/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/lib/nixon.css" rel="stylesheet">
+    <link href="assets/lib/lobipanel/css/lobipanel.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+	<style type="text/css">
+
+.div1{
+	border-style:solid;
+	background-color: white;
+	top:30px;
+	height: 80px;
+	width: 90px;
+	position:absolute;
+    left:10%;
+	}
+.div2{
+	position: absolute;
+	top:130px;
+}
+.informa{
+	top:20 px;
+	height: 160px;
+	position: relative;
+	left: 30%;
+ 
+	}
+
+
+	</style>
+
+
+
+
+
+</head>
+
+<body>
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+            	<!--左侧导航栏-->
+                <ul>
+                     <li ><a class="sidebar-sub-toggle"><i class="ti-home"></i> 主页 <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+
+                    </li>
+                    <li><a href="app-profile.html"><i class="ti-user"></i> 个人信息</a></li>
+                    <li><a href="upload.html"><i class="ti-layout-grid2-alt"></i> 我的资源</a></li>
+					<li class="active"><a href="social.html"><i class="ti-view-list-alt"></i> 资源社区 </a></li>
+
+                    <li><a href="index.html"><i class="ti-close"></i> 登出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="header">
+        <div class="pull-left">
+                        <div class="logo">
+                <a href="index.html">
+                    <img id="logoImg"
+                    src="assets\images\logo.png"
+                    data-logo_big="assets\images\logo.png"
+                    data-logo_small="assets\images\logo.png"
+                    alt="CQUCloud" />
+                </a>
+            </div>
+            <div class="hamburger sidebar-toggle">
+                <span class="ti-menu"></span>
+            </div>
+        </div>
+        <div class="pull-right p-r-15">
+            <ul>
+
+
+                <!--右上角用户Jane-->
+                <li class="header-icon dib">
+                    <img class="avatar-img" src="{% static 'assets/images/avatar/1.jpg' %}" alt="" /><span style="font-size: 80%">你好！</span>
+                    <span class="user-avatar">{{ username }}</span>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="chat-sidebar">
+        <!-- BEGIN chat -->
+        <div id="mmc-chat" class="color-default">
+            <!-- BEGIN CHAT BOX -->
+
+            <!-- END CHAT BOX -->
+            <!-- BEGIN SIDEBAR -->
+
+            <!-- END SIDEBAR -->
+        </div>
+        <!-- END chat -->
+    </div>
+    <!-- END chat Sidebar-->
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-0">
+                        <div class="page-header">
+							<div class="page-title">
+								<h1> 我的分享 </h1>
+							</div>
+						</div>
+                    </div><!-- /# column -->
+                    <div class="col-lg-4 p-0">
+                        <div class="page-header">
+							<div class="page-title">
+								<ol class="breadcrumb text-right">
+								</ol>
+							</div>
+						</div>
+                    </div><!-- /# column -->
+                </div><!-- /# row -->
+            </div>
+        </div>
+    </div>
+
+
+<div class= "informa" width="60%">
+	
+	  <div class="div1">
+
+	    （这里当然是头像鸭）
+
+	</div>
+ 
+	<div class="div2">
+
+	   <button type="button" class="btn btn-primary m-b-10 m-l-5">按点赞数排序</button>
+	   <button type="button" class="btn btn-primary m-b-10 m-l-5">按下载数排序</button>
+	   <button type="button" class="btn btn-primary m-b-10 m-l-5">按转发量排序</button>
+
+	</div>
+ 
+</div>
+<br><br>
+       <div class="main-content">
+   				
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="card alert">
+								<div class="card-header">
+									<h4><a href="social1.html">绝望的主妇（一到八季全）需要自取</a></h4>
+
+								</div>
+								<div class="button-list">
+									<p class="text-muted m-b-15">
+										<span style="font-color:blue" >上传者</span>
+										zwx
+										    <p >
+                                                <span class="ti-star"></span><span class="icon-name">点赞</span>
+                                            </p>
+											<p><span class="ti-download"></span><span class="icon-name">下载</span></p>
+									</p>
+								</div>
+							</div><!-- /# card -->
+						</div><!-- /# column -->
+						<div class="col-lg-6">
+							<div class="card alert">
+								<div class="card-header">
+									<h4>溺水小刀 小松菜奈 高清版 流畅 </h4>
+
+								</div>
+								<div class="button-list">
+									<p class="text-muted m-b-15">
+										<span style="font-color:blue" >上传者</span>
+										wjk
+										<p >
+                                                <span class="ti-star"></span><span class="icon-name">点赞</span>
+                                           </p>
+										   <p><span class="ti-download"></span><span class="icon-name">下载</span></p>
+									</p>
+								</div>
+							</div><!-- /# card -->
+						</div><!-- /# column -->
+					</div><!-- /# row -->
+
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="card alert">
+								<div class="card-header">
+									<h4>《最好的我们》全文 </h4>
+
+								</div>
+								<div class="button-list">
+									<p class="text-muted m-b-15">
+										<span style="font-color:blue" >上传者</span>
+										ayj
+										<p >
+                                                <span class="ti-star"></span><span class="icon-name">点赞</span>
+                                            </p>
+											<p><span class="ti-download"></span><span class="icon-name">下载</span></p>
+									</p>
+								</div>
+							</div><!-- /# card -->
+						</div><!-- /# column -->
+
+						<div class="col-lg-6">
+							<div class="card alert">
+								<div class="card-header">
+									<h4>中餐厅第二季 王俊凯单人cut 全</h4>
+
+								</div>
+								<div class="button-list">
+									<p class="text-muted m-b-15">
+										<span style="font-color:blue" >上传者</span>
+										zwx
+										<p >
+                                                <span class="ti-star"></span><span class="icon-name">点赞</span>
+                                            </p>
+											<p><span class="ti-download"></span><span class="icon-name">下载</span></p>
+									</p>
+								</div>
+							</div><!-- /# card -->
+						</div><!-- /# column -->
+					</div><!-- /# row -->
+
+					<div class="row">
+
+						<div class="col-lg-6">
+							<div class="card alert">
+								<div class="card-header">
+									<h4>创造营2019  周震南 焉栩嘉 夏之光 赵让 何洛洛</h4>
+
+								</div>
+								<div class="button-list">
+									<p class="text-muted m-b-15">
+										<span style="font-color:blue" >上传者</span>
+										ayj
+										<p >
+                                                <span class="ti-star"></span><span class="icon-name">点赞</span>
+                                            </p>
+											<p><span class="ti-download"></span><span class="icon-name">下载</span></p>
+									</p>
+								</div>
+							</div><!-- /# card -->
+						</div><!-- /# column -->
+
+						<div class="col-lg-6">
+							<div class="card alert">
+								<div class="card-header">
+									<h4>Python从入门到实践   2015版 中文版 pdf </h4>
+
+								</div>
+								<div class="button-list">
+									<p class="text-muted m-b-15">
+										<span style="font-color:blue" >上传者</span>
+										ayj
+										<p >
+                                                <span class="ti-star"></span><span class="icon-name">点赞</span>
+                                            </p>
+											<p><span class="ti-download"></span><span class="icon-name">下载</span></p>
+									</p>
+
+								</div>
+							</div><!-- /# card -->
+						</div><!-- /# column -->
+					</div><!-- /# row -->
+
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="card alert">
+								<div class="card-header">
+									<h4>TF少年go 第一季到第三季 全 王俊凯 王源 易烊千玺</h4>
+
+								</div>
+								<div class="card-toggle-body">
+									<p class="text-muted m-b-15">
+										<span style="font-color:blue" >上传者</span>
+										zwx
+										<p >
+                                                <span class="ti-star"></span><span class="icon-name">点赞</span>
+                                            </p>
+											<p><span class="ti-download"></span><span class="icon-name">下载</span></p>
+									</p>
+								<div class="button-list">
+								</div>
+								</div>
+							</div><!-- /# card -->
+						</div><!-- /# column -->
+
+						<div class="col-lg-6">
+							<div class="card alert">
+								<div class="card-header">
+									<h4>茶花女 1946年电影 意大利版本 典藏</h4>
+
+								</div>
+								<div class="card-toggle-body">
+										<p class="text-muted m-b-15">
+										<span style="font-color:blue" >上传者</span>
+										ayj
+
+                                               <p> <span class="ti-star"></span><span class="icon-name">点赞</span></p>
+
+                                            <p><span class="ti-download"></span><span class="icon-name">下载</span></p>
+									</p>
+								</div>
+							</div><!-- /# card -->
+						</div><!-- /# column -->
+					</div><!-- /# row -->
+
+
+
+</body>
+
+
+
+
+
+
+
+
+<!-- /# content wrap -->
+<script src="assets/js/lib/jquery.min.js"></script>
+<!-- jquery vendor -->
+<script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+<script src="assets/js/lib/sidebar.js"></script>
+<!-- sidebar -->
+<script src="assets/js/lib/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<script src="assets/js/lib/mmc-common.js"></script>
+<script src="assets/js/lib/mmc-chat.js"></script>
+<!--  Chart js -->
+<script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+<script src="assets/js/lib/chart-js/chartjs-init.js"></script>
+<!-- // Chart js -->
+<!--  Datamap -->
+<script src="assets/js/lib/datamap/d3.min.js"></script>
+<script src="assets/js/lib/datamap/topojson.js"></script>
+<script src="assets/js/lib/datamap/datamaps.world.min.js"></script>
+<script src="assets/js/lib/datamap/datamap-init.js"></script>
+<script src="assets/lib/lobipanel/js/lobipanel.js"></script>
+<!-- // Datamap -->
+<script src="assets/js/scripts.js"></script>
+<!-- scripit init-->
+<script>
+    $(document).ready(function() {
+        $('#lobipanel-custom-control').lobiPanel({
+            reload: false,
+            close: false,
+            editTitle: false
+        });
+    });
+</script>
+</body>
+
+</html>

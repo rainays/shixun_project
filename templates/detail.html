@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CQUCloud——我的主页</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="{%static 'images/logo.png'%}">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="{%static 'images/logo.png'%}">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="{%static 'images/logo.png'%}">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="{%static 'images/logo.png'%}">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="{%static 'images/logo.png'%}">
+    <!-- Styles -->
+    <link href="{%static 'assets/fontAwesome/css/fontawesome-all.min.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/themify-icons.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/mmc-chat.css'%}" rel="stylesheet" />
+    <link href="{%static 'assets/css/lib/sidebar.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/nixon.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/lib/lobipanel/css/lobipanel.min.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/style.css'%}" rel="stylesheet">
+
+<script type="text/javascript">
+        function reply_() {
+            //console.log(data1);
+            document.getElementById("type").style.display="block"
+        }
+        function search_()
+        {
+            document.getElementById(searchform).submit()
+            document.getElementById("search11").style.display="block"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="none"
+        }
+        function pic_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="block"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="none"
+        }
+        function all_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="block"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="none"
+        }
+        function office_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="block"
+            document.getElementById("other").style.display="none"
+        }
+        function other_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="block"
+        }
+        function video_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="block"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="none"
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+            	<!--左侧导航栏-->
+                <ul>
+                    <li><a href="/mycloud/mypage/"><i class="ti-home"></i> 主页 </a></li>
+                    <li><a  href="/userinfo/"><i class="ti-user"></i> 个人信息</a></li>
+					<li ><a href="/find/show/"><i class="ti-view-list-alt"></i> 资源社区 </a></li>
+                    <li class="active"><a><i class="ti-file"></i> 我的动态</a></li>
+                    <li onclick="quit()"><a href="/index/"><i class="ti-close"></i> 登出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="header">
+        <div class="pull-left">
+            <div class="logo">
+                <a href="index.html">
+                    <img id="logoImg"
+                    src="{%static 'assets/images/logo.png'%}"
+                    data-logo_big="{%static 'assets/images/logo.png'%}"
+                    data-logo_small="{%static 'assets/images/logo.png'%}"
+                    alt="CQUCloud" />
+                </a>
+            </div>
+            <div class="hamburger sidebar-toggle" onclick="">
+                <span class="ti-menu"></span>
+            </div>
+        </div>
+
+        <div class="pull-right p-r-15">
+            <ul>
+
+                <!--右上角用户Jane-->
+                <li class="header-icon dib">
+                    <img class="avatar-img" src="{% static userimg %}" alt="" /><span style="font-size: 80%">你好！</span>
+                    <span class="user-avatar">{{ mynickname }}</span>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="chat-sidebar">
+        <!-- BEGIN chat -->
+        <div id="mmc-chat" class="color-default">
+            <!-- BEGIN CHAT BOX -->
+
+            <!-- END CHAT BOX -->
+            <!-- BEGIN SIDEBAR -->
+
+            <!-- END SIDEBAR -->
+        </div>
+        <!-- END chat -->
+    </div>
+    <!-- END chat Sidebar-->
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-0">
+                        <div class="page-header">
+							<div class="page-title">
+								<h1>动态详情</h1>
+							</div>
+						</div>
+                    </div><!-- /# column -->
+                    <div class="col-lg-4 p-0">
+                        <div class="page-header">
+							<div class="page-title">
+								<ol class="breadcrumb text-right">
+								</ol>
+							</div>
+						</div>
+                    </div><!-- /# column -->
+                </div><!-- /# row -->
+
+
+
+
+
+   				<div class="main-content">
+
+
+                        <div class="col-lg-6">
+
+
+                                <div class="media-left">
+                                    <a href="#">
+                                        <div class="user-photo m-b-30">
+                                            <!--<img class="img-responsive" src="http://127.0.0.1:8010/{{ img }}" alt="" />-->
+                                            <img style="width: 60px;height: 60px;border-radius: 50%; float: left;margin-top: 20px " src="{% static author_head %}" alt="..." />
+                                            <b>{{ author_name.nickname }}</b>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4><a class="media-heading" href="social1.html"></a></h4>
+                                    <p style="word-wrap:break-word;word-break:break-all;margin-left: 23px;line-height: 24px;font-size: 17px;">{{ content }}<br>
+                                    </p>
+                                </div>
+                                <div class="button-list">
+                                    <p class="text-muted m-b-15">
+                                        <span style="font-color:blue"; style="margin-top: 20px;" ></span>
+                                            <p>
+                                                 <span class="ti-star"></span>&ensp;<span>点赞</span>{{ up_num }}&emsp;
+                                                <span class="ti-comments"></span><span>评论</span>{{ comment_num }}&emsp;
+                                                 <span class="ti-heart"></span><span>收藏</span>{{ collect_num }}&emsp;
+                                                <form action="/find/comment/{{ name }}/{{ dynamic_id }}/" method="post" >
+                                                        {% csrf_token %}
+                                                        <textarea class="form-control" rows="6"  cols="20" placeholder="写出你的评论 " name="content" type="text" id="content"></textarea><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;
+                                                        <button class="btn btn-primary m-b-10 m-l-5" type="submit"><span class="ti-comments"></span>评论</button>
+                                                </form>
+                                            </p>
+                                            {% for comment in comments %}
+                                        <div class="user-photo m-b-30">
+											<!--<img class="img-responsive" src="http://127.0.0.1:8010/{{ img }}" alt="" />-->
+                                            <img style="width: 60px;height: 60px;border-radius: 50%; float: left;margin-top: -20px " src="{% static comment.user.imgpath  %}" alt="..." />
+                                            {{ comment.user.nickname }}
+                                            {{ comment.create_time }}
+										</div>
+                                                <div>{{ comment.content }}</div><br>
+
+                                                {% if nowid == comment.user.uid %}
+                                                    <a href="/find/delete/comment/{{ comment.nid }}/{{ dynamic_id }}"><button  type="submit" class="ti-comment">&ensp;删除评论</button></a><p>
+                                                {% endif %}
+                                                <button onclick="reply_()" class="btn btn-primary m-b-10 m-l-5">回复</button>
+                                                <div id="type" style="display: none">
+                                                {{ comment.nid }}
+                                                <form style="position: absolute;left: 50%;right: 20%;top: 80%;bottom: 0" action="/find/reply/{{ dynamic_id }}/{{ comment.nid }}/{{ name }}" method="post" >
+                                                        {% csrf_token %}
+                                                        <textarea class="form-control" rows="6"  cols="20" placeholder="回复评论 " name="content" type="text" id="content"></textarea>
+                                                        <button class="btn btn-primary m-b-10 m-l-5" type="submit"></span>回复</button>
+                                                </form>
+                                                </div>
+
+                                                {% for reply in replys %}
+                                                    {{ reply.comment.nid }}
+                                                    {{ comment.nid }}
+                                                    {% if reply.comment.nid == comment.nid %}
+                                                        <div class="user-photo m-b-30">
+                                                            <img style="width: 60px;height: 60px;border-radius: 50%; float: left;margin-top: -20px " src="{% static reply.user.imgpath  %}" alt="..." />
+                                                            {{ reply.user.nickname }}
+                                                            {{ reply.create_time }}
+										                </div>
+                                                        <div>回复内容：{{ reply.content }}</div><br>
+                                                        <a href="/find/delete/reply/{{ reply.nid }}/"><button  type="submit" class="ti-comment">&ensp;删除回复</button></a>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endfor %}
+                                    </p>
+                                </div>
+
+                        </div><!-- /# column -->
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- /# content wrap -->
+<script src="{% static 'assets/js/lib/jquery.min.js'%} "></script>
+<!-- jquery vendor -->
+<script src="{% static 'assets/js/lib/jquery.nanoscroller.min.js'%} "></script>
+<!-- nano scroller -->
+<script src="{% static 'assets/js/lib/sidebar.js'%} "></script>
+<!-- sidebar -->
+<script src="{% static 'assets/js/lib/bootstrap.min.js'%} "></script>
+<!-- bootstrap -->
+<script src="{% static 'assets/js/lib/mmc-common.js'%} "></script>
+<script src="{% static 'assets/js/lib/mmc-chat.js'%} "></script>
+<!--  Chart js -->
+<script src="{% static 'assets/js/lib/chart-js/Chart.bundle.js'%} "></script>
+<script src="{% static 'assets/js/lib/chart-js/chartjs-init.js'%} "></script>
+<!-- // Chart js -->
+<!--  Datamap -->
+<script src="{% static 'assets/js/lib/datamap/d3.min.js'%} "></script>
+<script src="{%  static 'assets/js/lib/datamap/topojson.js'%} "></script>
+<script src="{% static 'assets/js/lib/datamap/datamaps.world.min.js'%} "></script>
+<script src="{% static 'assets/js/lib/datamap/datamap-init.js'%} "></script>
+<script src="{% static 'assets/lib/lobipanel/js/lobipanel.js'%} "></script>
+<!-- // Datamap -->
+<script src="{% static 'assets/js/scripts.js'%} "></script>
+<!-- scripit init-->
+<script>
+    $(document).ready(function() {
+        $('#lobipanel-custom-control').lobiPanel({
+            reload: false,
+            close: false,
+            editTitle: false
+        });
+    });
+</script>
+ <script>
+function setCookie(name, value, seconds) {
+		seconds = seconds || 0;
+		var expires = "";
+		if (seconds != 0) {
+			var date = new Date();
+			date.setTime(date.getTime() + (seconds * 1000));
+			expires = "; expires=" + date.toGMTString();
+		}
+		document.cookie = name + "=" + escape(value) + expires + "; path=/";
+	}
+	function quit() {
+		window.location = "/index"
+		setCookie("name","",-1)
+		setCookie("pwd","",-1)
+	}
+</script>
+
+</body>
+
+</html>

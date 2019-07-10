@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CQUCloud——我的主页</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="{%static 'images/logo.png'%}">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="{%static 'images/logo.png'%}">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="{%static 'images/logo.png'%}">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="{%static 'images/logo.png'%}">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="{%static 'images/logo.png'%}">
+    <!-- Styles -->
+    <link href="{%static 'assets/fontAwesome/css/fontawesome-all.min.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/themify-icons.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/mmc-chat.css'%}" rel="stylesheet" />
+    <link href="{%static 'assets/css/lib/sidebar.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/nixon.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/lib/lobipanel/css/lobipanel.min.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/style.css'%}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+            	<!--左侧导航栏-->
+                <ul>
+                     <li ><a class="sidebar-sub-toggle"><i class="ti-home"></i> 主页 <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="mypage.html">我的主页</a></li>
+                             
+                        </ul>
+                    </li>
+                    <li><a href="/userinfo/"><i class="ti-user"></i> 个人信息</a></li>
+                    <li><a href="/mycloud/mypage/"><i class="ti-layout-grid2-alt"></i> 我的资源</a></li>
+					<li class="active"><a href="/find/show/"><i class="ti-view-list-alt"></i> 资源社区 </a></li>
+                    <li><a  href="/find/dynamic/user/{{ userid }}/"><i class="ti-file"></i> 我的动态</a></li>
+                    <li><a href="index.html"><i class="ti-close"></i> 登出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="header">
+            <div class="pull-left">
+                <div class="logo">
+                    <a href="index.html">
+                        <img id="logoImg" 
+                        src="{%static 'assets/images/logo.jpg'%}"
+                        data-logo_big="{%static 'assets/images/logo.jpg'%}"
+                        data-logo_small="{%static 'assets/images/logo.jpg'%}"
+                        alt="cqucloud" />
+                    </a>
+                </div>
+                <div class="hamburger sidebar-toggle">
+                    <span class="ti-menu"></span>
+                </div>
+            </div>
+            <div class="pull-right p-r-15">
+                <ul>
+            	    <!--右上角小铃铛-->
+                    <li class="header-icon dib">
+                        <i class="ti-bell"></i>
+                        <div class="note-count">2</div>
+                        <div class="drop-down">
+                            <div class="dropdown-content-heading">
+                                <span class="text-left">消息</span>
+                            </div>
+                            <div class="dropdown-content-body">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <img class="pull-left m-r-10 avatar-img" src="{%static 'assets/images/avatar/3.jpg'%}" alt="" />
+                                            <div class="notification-content">
+                                                <small class="notification-timestamp pull-right"> 时间</small>
+                                                <div class="notification-heading">用户名</div>
+                                                <div class="notification-text">5 members joined today </div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="#">
+                                            <img class="pull-left m-r-10 avatar-img" src="{%static 'assets/images/avatar/3.jpg'%}" alt="" />
+                                            <div class="notification-content">
+                                                <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                <div class="notification-heading">用户</div>
+                                                <div class="notification-text">Hi CQUer, Just wanted to let you ...</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="text-center">
+                                        <a href="#" class="more-link">See All</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!--右上角消息-->
+                    <li class="header-icon dib chat-sidebar-icon"><i class="ti-comments"></i></li>
+                
+                    <!--右上角用户Jane-->
+                    <li class="header-icon dib">
+                        <img class="avatar-img" src="{%static 'assets/images/avatar/1.jpg'%}" alt="" /> <span class="user-avatar">{{ nickname }} <i class="ti-angle-down f-s-10"></i></span>
+                        <div class="drop-down dropdown-profile">
+                            <div class="dropdown-content-heading">
+                                <span class="text-left">Upgrade Now</span>
+                                <p class="trial-day">30 Days Trail</p>
+                            </div>
+                            <div class="dropdown-content-body">
+                                <ul>
+                                    <li><a href="#"><i class="ti-user"></i> <span>CQUer Profile</span></a></li>
+                                    <li><a href="#"><i class="ti-wallet"></i> <span>CQUer Balance</span></a></li>
+                                    <li><a href="#"><i class="ti-write"></i> <span>CQUer Task</span></a></li>
+                                    <li><a href="#"><i class="ti-calendar"></i> <span>CQUer Calender</span></a></li>
+                                    <li><a href="#"><i class="ti-email"></i> <span>CQUer Inbox</span></a></li>
+                                    <li><a href="#"><i class="ti-settings"></i> <span>CQUer Setting</span></a></li>
+                                    <li><a href="#"><i class="ti-help-alt"></i> <span>CQUer Help</span></a></li>
+                                    <li><a href="#"><i class="ti-lock"></i> <span>Lock Screen</span></a></li>
+                                    <li><a href="#"><i class="ti-power-off"></i> <span>Logout</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+     </div>
+    
+
+        <div class="chat-sidebar">
+            <!-- BEGIN chat -->
+            <div id="mmc-chat" class="color-default">
+                <!-- BEGIN CHAT BOX -->
+
+                <!-- END CHAT BOX -->
+                <!-- BEGIN SIDEBAR -->
+
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- END chat -->
+        </div>
+        <!-- END chat Sidebar-->
+
+        <div class="content-wrap">
+            <div class="main">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-8 p-0">
+                            <div class="page-header">
+							    <div class="page-title">
+								    <h1>资源社区</h1>
+							    </div>
+						    </div>
+                        </div><!-- /# column -->
+                        <div class="col-lg-4 p-0">
+                            <div class="page-header">
+							    <div class="page-title">
+								    <ol class="breadcrumb text-right">
+								    </ol>
+							    </div>
+						    </div>
+                        </div><!-- /# column -->
+                    </div><!-- /# row -->
+
+
+                <form action="write/{{ names }}/" method="post">
+                    {% csrf_token %}
+                    <h4>&ensp; 有什么资源想分享给大家？</h4><br>
+                    <textarea class="form-control" rows="6"  cols="20" placeholder="Share with us ! " name="content" type="text" id="content"></textarea><br>
+                    &ensp; <button class="btn btn-primary m-b-10 m-l-5" type="submit">发布</button>
+                </form>
+
+                  <!-- 页码导航 -->
+                    <div class="pagination row">
+                        <div class="m-auto">
+                            <span class="step-links">
+                                <!-- 如果不是第一页，则显示上翻按钮 -->
+                                {% if articles.has_previous %}
+                                    <a href="?page=1" class="btn btn-success">
+                                        &laquo; 1
+                                    </a>
+                                    <span>...</span>
+                                    <a href="?page={{ articles.previous_page_number }}"
+                                       class="btn btn-secondary"
+                                    >
+                                        {{ articles.previous_page_number }}
+                                    </a>
+                                {% endif %}
+
+                                <!-- 当前页面 -->
+                                <span class="current btn btn-danger btn-lg">
+                                    {{ articles.number }}
+                                </span>
+
+                                <!-- 如果不是最末页，则显示下翻按钮 -->
+                                {% if articles.has_next %}
+                                    <a href="?page={{ articles.next_page_number }}"
+                                       class="btn btn-secondary"
+                                    >
+                                        {{ articles.next_page_number }}
+                                    </a>
+                                    <span>...</span>
+                                    <a href="?page={{ articles.paginator.num_pages }}"
+                                       class="btn btn-success"
+                                    >
+                                        {{ articles.paginator.num_pages }} &raquo;
+                                    </a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+
+   				<div class="main-content">
+                     {% for user in list %}
+
+						<div class="col-lg-6">
+							<div class="card alert">
+
+								<div class="media-left">
+									<a href="/find/dynamic/user/{{ user.author.uid }}/">
+                                        <div class="user-photo m-b-30">
+											<!--<img class="img-responsive" src="http://127.0.0.1:8010/{{ img }}" alt="" />-->
+                                            <img style="width: 60px;height: 60px;border-radius: 50%" src="{% static user.author.imgpath  %}" alt="..." />
+										</div>
+                                    </a>
+								</div>
+								<div class="media-body">
+									<h4><a class="media-heading" href="social1.html"></a></h4>
+									<p style="width:60%">{{ user.content }} </p>
+								</div>
+								<div class="button-list">
+									<p class="text-muted m-b-15">
+										<span style="font-color:blue" ></span>
+                                        <p>
+										{{ user.author.nickname }}
+                                         </p>
+										     <p >
+                                                <span class="ti-star"></span><span class="icon-name">点赞</span>
+                                            </p>
+
+									</p>
+								</div>
+							</div><!-- /# card -->
+						</div><!-- /# column -->
+
+                       {% endfor %}
+                </div>
+
+
+
+                </div>
+            </div>  
+        </div>
+    <!-- /# content wrap -->
+    <script src="{%static 'assets/js/lib/jquery.min.js'%}"></script>
+    <!-- jquery vendor -->
+    <script src="{%static 'assets/js/lib/jquery.nanoscroller.min.js'%}"></script>
+    <!-- nano scroller -->
+    <script src="{%static 'assets/js/lib/sidebar.js'%}"></script>
+    <!-- sidebar -->
+    <script src="{%static 'assets/js/lib/bootstrap.min.js'%}"></script>
+    <!-- bootstrap -->
+    <script src="{%static 'assets/js/lib/mmc-common.js'%}"></script>
+    <script src="{%static 'assets/js/lib/mmc-chat.js'%}"></script>
+    <!--  Chart js -->
+    <script src="{%static 'assets/js/lib/chart-js/Chart.bundle.js'%}"></script>
+    <script src="{%static 'assets/js/lib/chart-js/chartjs-init.js'%}"></script>
+    <!-- // Chart js -->
+    <!--  Datamap -->
+    <script src="{%static 'assets/js/lib/datamap/d3.min.js'%}"></script>
+    <script src="{%static 'assets/js/lib/datamap/topojson.js'%}"></script>
+    <script src="{%static 'assets/js/lib/datamap/datamaps.world.min.js'%}"></script>
+    <script src="{%static 'assets/js/lib/datamap/datamap-init.js' %}"></script>
+    <script src="{%static 'assets/lib/lobipanel/js/lobipanel.js'%}"></script>
+    <!-- // Datamap -->
+    <script src="{%static 'assets/js/scripts.js'%}"></script>
+    <!-- scripit init-->
+    <script>
+        $(document).ready(function() {
+            $('#lobipanel-custom-control').lobiPanel({
+                reload: false,
+                close: false,
+                editTitle: false
+            });
+        });
+    </script>
+</body>
+
+</html>

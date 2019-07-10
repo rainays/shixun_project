@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html>  
+<head>
+    {% load staticfiles %}
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>  
+<title>在线预览</title>  
+<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">  
+<script type="text/javascript" src="{% static 'js1/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js1/jquery.media.js' %}"></script>
+<script type="text/javascript">  
+    $(function() {  
+        $('a.media').media({width:1000, height:920});
+    });  
+</script> 
+ 
+</head>
+<body>
+<center>
+ <div class="panel panel-primary">
+      <div class="panel-heading" align="center">
+         <h2>预览</h2>
+      </div>
+      <div class="panel-body">
+          <a class="media" href="{% static path %}"></a>
+      </div>
+ </div>
+</center>
+</body>
+</html>

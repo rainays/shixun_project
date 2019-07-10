@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CQUCloud——资源社区</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="{% static 'images/logo.png'%}">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="{%static 'images/logo.png'%}">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/logo.png'%}">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/logo.png'%}">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'images/logo.png'%}">
+    <!-- Styles -->
+    <link href="{% static 'assets/fontAwesome/css/fontawesome-all.min.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/css/lib/themify-icons.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/css/lib/mmc-chat.css'%}" rel="stylesheet" />
+    <link href="{%static 'assets/css/lib/sidebar.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/css/lib/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/css/lib/nixon.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/lib/lobipanel/css/lobipanel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/viewer.min.css' %}"
+
+
+	<style type="text/css">
+
+
+
+	</style>
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+<div class="header">
+        <div class="pull-left">
+                        <div class="logo">
+                <a href="index.html">
+                    <img id="logoImg"
+                    src="{% static 'assets\images\logo.png'%}"
+                    data-logo_big="assets\images\logo.png"
+                    data-logo_small="assets\images\logo.png"
+                    alt="CQUCloud" />
+                </a>
+            </div>
+
+        </div>
+        <div class="pull-right p-r-15">
+            <ul>
+
+
+                <!--右上角用户Jane-->
+                <li class="header-icon dib">
+                    <img class="avatar-img" src="{% static 'assets/images/avatar/1.jpg' %}" alt="" /><span style="font-size: 80%">你好！</span>
+                    <span class="user-avatar"></span>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="chat-sidebar">
+        <!-- BEGIN chat -->
+        <div id="mmc-chat" class="color-default">
+            <!-- BEGIN CHAT BOX -->
+
+            <!-- END CHAT BOX -->
+            <!-- BEGIN SIDEBAR -->
+
+            <!-- END SIDEBAR -->
+        </div>
+        <!-- END chat -->
+    </div>
+    <!-- END chat Sidebar-->
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-0">
+                        <div class="page-header">
+							<div class="page-title">
+								<h1> 文件下载 </h1>
+							</div>
+						</div>
+                    </div><!-- /# column -->
+                    <div class="col-lg-4 p-0">
+                        <div class="page-header">
+							<div class="page-title">
+								<ol class="breadcrumb text-right">
+								</ol>
+							</div>
+						</div>
+                    </div><!-- /# column -->
+                </div><!-- /# row -->
+                <br><br><br><br><br>
+<div style="position: absolute;left: 40%;right: 40%;top:100%;bottom: 40%">
+	<div class="div1">
+
+	    <img id="{{ Imgpath }}" onclick="yulan('{{ Imgpath }}')" style="height: 200px" src= "{% static Imgpath %}" class="img-rounded img-responsive" alt="picture" />
+
+	</div>
+<p>  </p>
+	<div class="div2">
+
+       <a href="/mycloud/yulan/{{ user }}/{{ filename }}"> <button type="button" class="btn btn-primary m-b-10 m-l-5">预览</button></a>
+
+       <a href="/mycloud/ShareDownload/{{ user }}/{{ filename }}"><button type="button" class="btn btn-primary m-b-10 m-l-5">下载</button></a>
+	   
+
+	</div>
+</div>
+
+
+</body>
+
+
+
+
+
+
+
+
+<!-- /# content wrap -->
+<script src="{% static 'assets/js/lib/jquery.min.js'%}"></script>
+<!-- jquery vendor -->
+<script src="{% static 'assets/js/lib/jquery.nanoscroller.min.js'%}"></script>
+<!-- nano scroller -->
+<script src="{% static 'assets/js/lib/sidebar.js'%}"></script>
+<!-- sidebar -->
+<script src="{% static 'assets/js/lib/bootstrap.min.js'%}"></script>
+<!-- bootstrap -->
+<script src="{% static 'assets/js/lib/mmc-common.js'%}"></script>
+<script src="{% static 'assets/js/lib/mmc-chat.js'%}"></script>
+<!--  Chart js -->
+<script src="{% static 'assets/js/lib/chart-js/Chart.bundle.js'%}"></script>
+<script src="{% static 'assets/js/lib/chart-js/chartjs-init.js'%}"></script>
+<!-- // Chart js -->
+<!--  Datamap -->
+<script src="{% static 'assets/js/lib/datamap/d3.min.js'%}"></script>
+<script src="{% static 'assets/js/lib/datamap/topojson.js'%}"></script>
+<script src="{% static 'assets/js/lib/datamap/datamaps.world.min.js'%}"></script>
+<script src="{% static 'assets/js/lib/datamap/datamap-init.js'%}"></script>
+<script src="{% static 'assets/lib/lobipanel/js/lobipanel.js'%}"></script>
+<!-- // Datamap -->
+<script src="{% static 'assets/js/scripts.js'%}"></script>
+<script src="{%static 'js1/viewer.min.js' %}"></script>
+<!-- scripit init-->
+
+<script type="text/javascript">
+  function yulan(data1){
+            console.log(data1);
+            var viewer = new Viewer(document.getElementById(data1), {
+             url: 'data-original'
+           });
+
+            console.log(123)
+        }
+
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#lobipanel-custom-control').lobiPanel({
+            reload: false,
+            close: false,
+            editTitle: false
+        });
+    });
+</script>
+</body>
+
+</html>

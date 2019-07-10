@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CQUCloud——我的主页</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="{%static 'images/logo.png'%}">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="{%static 'images/logo.png'%}">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="{%static 'images/logo.png'%}">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="{%static 'images/logo.png'%}">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="{%static 'images/logo.png'%}">
+    <!-- Styles -->
+    <link href="{%static 'assets/fontAwesome/css/fontawesome-all.min.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/themify-icons.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/mmc-chat.css'%}" rel="stylesheet" />
+    <link href="{%static 'assets/css/lib/sidebar.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/lib/nixon.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/lib/lobipanel/css/lobipanel.min.css'%}" rel="stylesheet">
+    <link href="{%static 'assets/css/style.css'%}" rel="stylesheet">
+
+<script type="text/javascript">
+        function search_()
+        {
+            document.getElementById(searchform).submit()
+            document.getElementById("search11").style.display="block"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="none"
+        }
+        function pic_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="block"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="none"
+        }
+        function all_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="block"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="none"
+        }
+        function office_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="block"
+            document.getElementById("other").style.display="none"
+        }
+        function other_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="none"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="block"
+        }
+        function video_()
+        {
+            document.getElementById("search11").style.display="none"
+            document.getElementById("pic").style.display="none"
+            document.getElementById("all").style.display="none"
+            document.getElementById("video").style.display="block"
+            document.getElementById("office").style.display="none"
+            document.getElementById("other").style.display="none"
+        }
+    </script>
+</head>
+
+<body>
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+            	<!--左侧导航栏-->
+                <ul>
+                     <li class="active"><a class="sidebar-sub-toggle" href="/mycloud/mypage/"><i class="ti-home"></i> 主页 </a>
+
+                    </li>
+                    <li><a  href="/userinfo/"><i class="ti-user"></i> 个人信息</a></li>
+					<li><a href="/find/show/"><i class="ti-view-list-alt"></i> 资源社区 </a></li>
+                    <li><a href="/index/"><i class="ti-close"></i> 登出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="header">
+        <div class="pull-left">
+            <div class="logo">
+                <a href="index.html">
+                    <img id="logoImg" 
+                    src="{%static 'assets/images/logo.jpg'%}"
+                    data-logo_big="{%static 'assets/images/logo.jpg'%}"
+                    data-logo_small="{%static 'assets/images/logo.jpg'%}"
+                    alt="CQUCloud" />
+                </a>
+            </div>
+            <div class="hamburger sidebar-toggle" onclick="">
+                <span class="ti-menu"></span>
+            </div>
+        </div>
+
+        <div class="pull-right p-r-15">
+            <ul>
+
+                <!--右上角用户Jane-->
+                <li class="header-icon dib">
+                    <img class="avatar-img" src="{% static 'assets/images/avatar/1.jpg' %}" alt="" /><span style="font-size: 80%">你好！</span>
+                    <span class="user-avatar">{{ username }}</span>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="chat-sidebar">
+        <!-- BEGIN chat -->
+        <div id="mmc-chat" class="color-default">
+            <!-- BEGIN CHAT BOX -->
+
+            <!-- END CHAT BOX -->
+            <!-- BEGIN SIDEBAR -->
+
+            <!-- END SIDEBAR -->
+        </div>
+        <!-- END chat -->
+    </div>
+    <!-- END chat Sidebar-->
+
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <!-- /# 分块 -->
+                <div class="main-content">
+                    <div class="row">
+                        <!-- /# 小块 column -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="stat-widget-two">
+                                    <div class="widget-icon color-1">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="stat-text">已用空间</div>
+                                        <div class="stat-digit">{{ size }}M</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: {{ size1 }}%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# 小块 column -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="stat-widget-two">
+                                    <div class="widget-icon color-2">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="stat-text">剩余空间</div>
+                                        <div class="stat-digit">{{ size_ }}M</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: {{ size2 }}%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+    </div>
+
+
+
+<!--content-->
+
+<div style="backgrpund-color:rgba(149, 149, 149, 0.18)"class="main">
+
+<!--
+<div class="custom-file">
+  <button style="background-color:#00838F" type="button" class="btn btn-primary btn-flat m-b-10 m-l-5"><i style="background-color:#00838F" class="ti-plus"></i><input style="background-color:#00838F;border-color:#00838F" type="file" class="btn btn-primary btn-flat m-b-10 m-l-5" id="customFileLangHTML"></button>
+</div>
+因为我看不懂，所以注释了重新写上传按钮-->
+
+
+
+<form action="/mycloud/FileUpload/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}   <!--加入这行 -->
+
+    <div class="row">
+                    <div  class="col-lg-8">
+                        <div style="width: 120%" class="page-header">
+							<div  class="page-title">
+								<h1>上传资源</h1>
+
+							</div>
+						</div>
+                    </div><!-- /# column -->
+                    <div class="col-lg-4 p-0">
+                        <div style="width: 94%"  class="page-header">
+							<div class="page-title">
+								<ol class="breadcrumb text-right">
+
+								</ol>
+							</div>
+						</div>
+
+                    </div><!-- /# column -->
+                </div><!-- /# row -->
+<p> </p>
+<button class="btn btn-outline-primary" type="submit"><input style="display: inline" type="file" name="filename" required> <br></button>
+
+                                <button style="background-color: #00838F; " class="btn btn-outline-primary" type="submit"><font style="color: white">上传</font></button>
+    <p> </p>
+</form>
+    {% if message %}
+    {{ message }}
+    {% endif %}
+<!--
+用showfiles写
+-->
+ <div class="row">
+        <div  class="col-lg-8 " p=0>
+            <div style="width: 120%" class="page-header">
+                <div  class="page-title">
+                    <h1>资源下载</h1>
+
+                </div>
+            </div>
+        </div><!-- /# column -->
+        <div class="col-lg-4 ">
+            <div style="width: 97%"  class="page-header">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+
+                    </ol>
+                </div>
+            </div>
+
+        </div><!-- /# column -->
+ </div><!-- /# row --><br>
+       <p> </p>
+ <form action="/mycloud/mypage/"  id="selectform"  style="float: left;width: 20%">
+            <div  style="display: inline" class="dropdown">
+                    &emsp; <button style="background-color: #00838F" class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">选择类型..
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li onclick="all_()"><a>全部</a></li>
+                        <li onclick="pic_()"><a>图片</a></li>
+                        <li onclick="video_()"><a>视频</a></li>
+                        <li onclick="office_()"><a>文档</a></li>
+                        <li onclick="other_()"><a>其他</a></li>
+                    </ul>
+                </div>
+ </form>
+
+ <div>
+                   <!--加  {% csrf_token %}  入这行 -->&emsp; &emsp; &emsp; &emsp; &emsp;
+   <input style="display: inline" class="btn btn-outline-primary" id="searchkuang" type="text" name="keywords" placeholder="请输入搜索内容" >
+   <button id="searchbox"  onclick="searchfile()" class="btn btn-primary mb-2" >搜索</button>
+                    <!-- <p><button type="submit">登录</button></p> -->
+</div>
+<br><br>
+<!--<div id="search" style="display: none">
+                <table>
+                      {% for files in seleted %}
+                       <tr>
+
+                        <div class="col-lg-3">
+                            <div style="height: 300px" class="card alert">
+
+                                <div class="card-body">
+                                    <img style="height: 200px" src= "{% static files.path %}" class="img-rounded img-responsive" alt="picture" />
+                                    {{ files.file }}
+                                    <p>
+                                    <li style="display: inline"><a href="/mycloud/FileDownload/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">下载</button></a> </li>
+                                    <li style="display: inline"><a href="/mycloud/FileDelete/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">删除</button></a></li>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </tr>
+                    {% empty %}
+                      <tr>
+                         <td>没得东西看</td>
+                      </tr>
+                    {% endfor %}
+                </table>
+ <nav style="width: 300px; margin: 0 auto" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      {% if dlistsearch.has_previous %}
+          <a href="?page={{ dlistsearch.previous_page_number }}" class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+      {% endif %}
+    </li>
+    {% if dlistsearch.number > 2 %}
+    <li class="disabled"><a class="disabled" href="#">1</a></li>
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="active"><a class="disabled" href="#">{{ dlistsearch.number }}</a></li>
+    {% if dlistsearch.number != dlistsearch.paginator.num_pages %}
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="disabled"><a class="disabled" href="#">{{ dlistsearch.paginator.num_pages }}</a></li>
+    {% endif %}
+    {% elif dlistsearch.number == 2 %}
+     <li class="disabled"><a class="disabled" href="#">1</a></li>
+     <li class="active"><a class="disabled" href="#">{{ dlistsearch.number }}</a></li>
+      {% if dlistsearch.paginator.num_pages == 2 %}
+      {% elif dlistsearch.paginator.num_pages == 3 %}
+          <li class="disabled"><a class="disabled" href="#">3</a></li>
+      {% elif dlistsearch.paginator.num_pages > 3 %}
+          <li class="disabled"><a class="disabled" href="#">...</a></li>
+          <li class="disabled"><a class="disabled" href="#">{{ dlistsearch.paginator.num_pages }}</a></li>
+      {% endif %}
+    {% else  %}
+        <li class="active"><a class="disabled" href="#">{{ dlistsearch.number }}</a></li>
+        {% if dlistsearch.paginator.num_pages > 2 %}
+            <li class="disabled"><a class="disabled" href="#">...</a></li>
+            <li class="disabled"><a class="disabled" href="#">{{ dlistsearch.paginator.num_pages }}</a></li>
+        {% elif dlistsearch.paginator.num_pages == 2 %}
+            <li class="disabled"><a class="disabled" href="#">{{ dlistsearch.paginator.num_pages }}</a></li>
+        {% endif %}
+    {% endif %}
+    <li class="page-item">
+      {% if dlistsearch.has_next %}
+      <a href="?page={{ dlistsearch.next_page_number }}" class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+     {% endif %}
+    </li>
+  </ul>
+</nav>
+                </div>-->
+<div id="search11" style="display: none">
+    <table>
+          <tr>
+             <td>没有搜到哦</td>
+          </tr>
+    </table>
+</div>
+
+<div id="pic" style="display: none">
+                <table>
+                      {% for files in Picture %}
+                       <tr>
+
+                        <div class="col-lg-3">
+                            <div style="height: 300px" class="card alert">
+
+                                <div class="card-body">
+                                    <img style="height: 200px" src= "{% static files.path %}" class="img-rounded img-responsive" alt="picture" />
+                                    {{ files.file }}
+                                    <p>
+                                    <li style="display: inline"><a href="/mycloud/FileDownload/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">下载</button></a> </li>
+                                    <li style="display: inline"><a href="/mycloud/FileDelete/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">删除</button></a></li>
+                                    <li style="display: inline"> <button data-toggle="modal" type="button"  class="btn btn-outline-primary"  onclick="tanchu('{{ files.file }}')"  data-target="#exampleModal" >分享</button></li>
+                                    <li style="display: inline"><a href="/mycloud/yulan/{{ files.filepath }}/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">预览</button></a></li>
+                                    <input name="{{ files.file }}" id="{{ files.file }}"  style="display: none" value="{{ files.file }}">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </tr>
+                    {% empty %}
+                      <tr>
+                         <td>没得东西看</td>
+                      </tr>
+                    {% endfor %}
+                </table>
+ <nav style="width: 300px;margin: 0 auto;position:absolute; left:45%;right: 45%;top:100%;bottom: 0" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      {% if dlistpic.has_previous %}
+          <a href="?page={{ dlistpic.previous_page_number }}" class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+      {% endif %}
+    </li>
+    {% if dlistpic.number > 2 %}
+    <li class="disabled"><a class="disabled" href="#">1</a></li>
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="active"><a class="disabled" href="#">{{ dlistpic.number }}</a></li>
+    {% if dlistpic.number != dlistpic.paginator.num_pages %}
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="disabled"><a class="disabled" href="#">{{ dlistpic.paginator.num_pages }}</a></li>
+    {% endif %}
+    {% elif dlistpic.number == 2 %}
+     <li class="disabled"><a class="disabled" href="#">1</a></li>
+     <li class="active"><a class="disabled" href="#">{{ dlistpic.number }}</a></li>
+      {% if dlistpic.paginator.num_pages == 2 %}
+      {% elif dlistpic.paginator.num_pages == 3 %}
+          <li class="disabled"><a class="disabled" href="#">3</a></li>
+      {% elif dlistpic.paginator.num_pages > 3 %}
+          <li class="disabled"><a class="disabled" href="#">...</a></li>
+          <li class="disabled"><a class="disabled" href="#">{{ dlistpic.paginator.num_pages }}</a></li>
+      {% endif %}
+    {% else  %}
+        <li class="active"><a class="disabled" href="#">{{ dlistpic.number }}</a></li>
+        {% if dlistpic.paginator.num_pages > 2 %}
+            <li class="disabled"><a class="disabled" href="#">...</a></li>
+            <li class="disabled"><a class="disabled" href="#">{{ dlistpic.paginator.num_pages }}</a></li>
+        {% elif dlistpic.paginator.num_pages == 2 %}
+            <li class="disabled"><a class="disabled" href="#">{{ dlistpic.paginator.num_pages }}</a></li>
+        {% endif %}
+    {% endif %}
+    <li class="page-item">
+      {% if dlistpic.has_next %}
+      <a href="?page={{ dlistpic.next_page_number }}" class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+     {% endif %}
+    </li>
+  </ul>
+</nav>
+                </div>
+<div id="video" style="display: none">
+                <table>
+                      {% for files in Videos %}
+                       <tr>
+
+                        <div class="col-lg-3">
+                            <div style="height: 300px" class="card alert">
+
+                                <div class="card-body">
+                                    <img style="height: 200px" src= "{% static files.path %}" class="img-rounded img-responsive" alt="picture" />
+                                    {{ files.file }}
+                                    <p>
+                                    <li style="display: inline"><a href="/mycloud/FileDownload/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">下载</button></a> </li>
+                                    <li style="display: inline"><a href="/mycloud/FileDelete/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">删除</button></a></li>
+                                    <li style="display: inline"> <button data-toggle="modal" type="button"  class="btn btn-outline-primary"  onclick="tanchu('{{ files.file }}')"  data-target="#exampleModal" >分享</button></li>
+                                    <li style="display: inline"><a href="/mycloud/yulan2/{{ files.filepath }}/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">预览</button></a></li>
+                                    <input name="{{ files.file }}" id="{{ files.file }}"  style="display: none" value="{{ files.file }}">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </tr>
+                    {% empty %}
+                      <tr>
+                         <td>没得东西看</td>
+                      </tr>
+                    {% endfor %}
+                </table>
+ <nav style="width: 300px; margin: 0 auto;position:absolute; left:45%;right: 45%;top:100%;bottom: 0" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      {% if dlistvideo.has_previous %}
+          <a href="?page={{ dlistvideo.previous_page_number }}" class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+      {% endif %}
+    </li>
+    {% if dlistvideo.number > 2 %}
+    <li class="disabled"><a class="disabled" href="#">1</a></li>
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="active"><a class="disabled" href="#">{{ dlistvideo.number }}</a></li>
+    {% if dlistvideo.number != dlistvideo.paginator.num_pages %}
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="disabled"><a class="disabled" href="#">{{ dlistvideo.paginator.num_pages }}</a></li>
+    {% endif %}
+    {% elif dlistvideo.number == 2 %}
+     <li class="disabled"><a class="disabled" href="#">1</a></li>
+     <li class="active"><a class="disabled" href="#">{{ dlistvideo.number }}</a></li>
+      {% if dlistvideo.paginator.num_pages == 2 %}
+      {% elif dlistvideo.paginator.num_pages == 3 %}
+          <li class="disabled"><a class="disabled" href="#">3</a></li>
+      {% elif dlistvideo.paginator.num_pages > 3 %}
+          <li class="disabled"><a class="disabled" href="#">...</a></li>
+          <li class="disabled"><a class="disabled" href="#">{{ dlistvideo.paginator.num_pages }}</a></li>
+      {% endif %}
+    {% else  %}
+        <li class="active"><a class="disabled" href="#">{{ dlistvideo.number }}</a></li>
+        {% if dlistvideo.paginator.num_pages > 2 %}
+            <li class="disabled"><a class="disabled" href="#">...</a></li>
+            <li class="disabled"><a class="disabled" href="#">{{ dlistvideo.paginator.num_pages }}</a></li>
+        {% elif dlistvideo.paginator.num_pages == 2 %}
+            <li class="disabled"><a class="disabled" href="#">{{ dlistvideo.paginator.num_pages }}</a></li>
+        {% endif %}
+    {% endif %}
+    <li class="page-item">
+      {% if dlistvideo.has_next %}
+      <a href="?page={{ dlistvideo.next_page_number }}" class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+     {% endif %}
+    </li>
+  </ul>
+</nav>
+                </div>
+<div id="office" style="display: none">
+                <table>
+                      {% for files in offices %}
+                       <tr>
+
+                        <div class="col-lg-3">
+                            <div style="height: 300px" class="card alert">
+
+                                <div class="card-body">
+                                    <img style="height: 200px" src= "{% static files.path %}" class="img-rounded img-responsive" alt="picture" />
+                                    {{ files.file }}
+                                    <p>
+                                    <li style="display: inline"><a href="/mycloud/FileDownload/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">下载</button></a> </li>
+                                    <li style="display: inline"><a href="/mycloud/FileDelete/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">删除</button></a></li>
+                                    <li style="display: inline"><a href="#"> <button type="button" class="btn btn-outline-primary">分享</button></a></li>
+                                    <li style="display: inline"><a href="/mycloud/yulan/{{ files.filepath }}/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">预览</button></a></li>
+                                    <input name="{{ files.file }}" id="{{ files.file }}"  style="display: none" value="{{ files.file }}">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </tr>
+                    {% empty %}
+                      <tr>
+                         <td>没得东西看</td>
+                      </tr>
+                    {% endfor %}
+                </table>
+ <nav style="width: 300px;margin: 0 auto;position:absolute; left:45%;right: 45%;top:100%;bottom: 0" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      {% if dlistoffice.has_previous %}
+          <a href="?page={{ dlistoffice.previous_page_number }}" class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+      {% endif %}
+    </li>
+    {% if dlistoffice.number > 2 %}
+    <li class="disabled"><a class="disabled" href="#">1</a></li>
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="active"><a class="disabled" href="#">{{ dlistoffice.number }}</a></li>
+    {% if dlistoffice.number != dlistoffice.paginator.num_pages %}
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="disabled"><a class="disabled" href="#">{{ dlistoffice.paginator.num_pages }}</a></li>
+    {% endif %}
+    {% elif dlistoffice.number == 2 %}
+     <li class="disabled"><a class="disabled" href="#">1</a></li>
+     <li class="active"><a class="disabled" href="#">{{ dlistoffice.number }}</a></li>
+      {% if dlistoffice.paginator.num_pages == 2 %}
+      {% elif dlistoffice.paginator.num_pages == 3 %}
+          <li class="disabled"><a class="disabled" href="#">3</a></li>
+      {% elif dlistoffice.paginator.num_pages > 3 %}
+          <li class="disabled"><a class="disabled" href="#">...</a></li>
+          <li class="disabled"><a class="disabled" href="#">{{ dlistoffice.paginator.num_pages }}</a></li>
+      {% endif %}
+    {% else  %}
+        <li class="active"><a class="disabled" href="#">{{ dlistoffice.number }}</a></li>
+        {% if dlistoffice.paginator.num_pages > 2 %}
+            <li class="disabled"><a class="disabled" href="#">...</a></li>
+            <li class="disabled"><a class="disabled" href="#">{{ dlistoffice.paginator.num_pages }}</a></li>
+        {% elif dlistoffice.paginator.num_pages == 2 %}
+            <li class="disabled"><a class="disabled" href="#">{{ dlistoffice.paginator.num_pages }}</a></li>
+        {% endif %}
+    {% endif %}
+    <li class="page-item">
+      {% if dlistoffice.has_next %}
+      <a href="?page={{ dlistoffice.next_page_number }}" class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+     {% endif %}
+    </li>
+  </ul>
+</nav>
+                </div>
+<div id="other" style="display: none">
+                <table>
+                      {% for files in others %}
+                       <tr>
+
+                        <div class="col-lg-3">
+                            <div style="height: 300px" class="card alert">
+
+                                <div class="card-body">
+                                    <img style="height: 200px" src= "{% static files.path %}" class="img-rounded img-responsive" alt="picture" />
+                                    {{ files.file }}
+                                    <p>
+                                    <li style="display: inline"><a href="/mycloud/FileDownload/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">下载</button></a> </li>
+                                    <li style="display: inline"><a href="/mycloud/FileDelete/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">删除</button></a></li>
+                                    <li style="display: inline"><a href="/mycloud/yulan/{{ files.filepath }}/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">预览</button></a></li>
+                                    <li style="display: inline"> <button data-toggle="modal" type="button"  class="btn btn-outline-primary"  onclick="tanchu('{{ files.file }}')"  data-target="#exampleModal" >分享</button></li>
+                                    <input name="{{ files.file }}" id="{{ files.file }}"  style="display: none" value="{{ files.file }}">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </tr>
+                    {% empty %}
+                      <tr>
+                         <td>没得东西看</td>
+                      </tr>
+                    {% endfor %}
+                </table>
+ <nav style="width: 300px;margin: 0 auto;position:absolute; left:45%;right: 45%;top:100%;bottom: 0" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      {% if dlistother.has_previous %}
+          <a href="?page={{ dlistother.previous_page_number }}" class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+      {% endif %}
+    </li>
+    {% if dlistother.number > 2 %}
+    <li class="disabled"><a class="disabled" href="#">1</a></li>
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="active"><a class="disabled" href="#">{{ dlistother.number }}</a></li>
+    {% if dlistother.number != dlistother.paginator.num_pages %}
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="disabled"><a class="disabled" href="#">{{ dlistother.paginator.num_pages }}</a></li>
+    {% endif %}
+    {% elif dlistother.number == 2 %}
+     <li class="disabled"><a class="disabled" href="#">1</a></li>
+     <li class="active"><a class="disabled" href="#">{{ dlistother.number }}</a></li>
+      {% if dlistother.paginator.num_pages == 2 %}
+      {% elif dlistother.paginator.num_pages == 3 %}
+          <li class="disabled"><a class="disabled" href="#">3</a></li>
+      {% elif dlistother.paginator.num_pages > 3 %}
+          <li class="disabled"><a class="disabled" href="#">...</a></li>
+          <li class="disabled"><a class="disabled" href="#">{{ dlistother.paginator.num_pages }}</a></li>
+      {% endif %}
+    {% else  %}
+        <li class="active"><a class="disabled" href="#">{{ dlistother.number }}</a></li>
+        {% if dlistother.paginator.num_pages > 2 %}
+            <li class="disabled"><a class="disabled" href="#">...</a></li>
+            <li class="disabled"><a class="disabled" href="#">{{ dlistother.paginator.num_pages }}</a></li>
+        {% elif dlistother.paginator.num_pages == 2 %}
+            <li class="disabled"><a class="disabled" href="#">{{ dlistother.paginator.num_pages }}</a></li>
+        {% endif %}
+    {% endif %}
+    <li class="page-item">
+      {% if dlistother.has_next %}
+      <a href="?page={{ dlistother.next_page_number }}" class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+     {% endif %}
+    </li>
+  </ul>
+</nav>
+                </div>
+<div id="all" style="display: block">
+                <table>
+                      {% for files in dlist %}
+                       <tr>
+
+                        <div class="col-lg-3">
+                            <div style="height: 300px" class="card alert">
+
+                                <div class="card-body">
+                                    <img style="height: 200px" src= "{% static files.path %}" class="img-rounded img-responsive" alt="picture" />
+                                    {{ files.file }}
+                                    <p>
+                                    <li style="display: inline"><a href="/mycloud/FileDownload/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">下载</button></a> </li>
+                                    <li style="display: inline"><a href="/mycloud/FileDelete/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">删除</button></a></li>
+                                    <li style="display: inline"><a href="/mycloud/yulan/{{ files.filepath }}/{{ files.file }}"> <button type="button" class="btn btn-outline-primary">预览</button></a></li>
+                                    <li style="display: inline"> <button data-toggle="modal" type="button"  class="btn btn-outline-primary"  onclick="tanchu('{{ files.file }}')"  data-target="#exampleModal" >分享</button></li>
+                                    <input name="{{ files.file }}" id="{{ files.file }}"  style="display: none" value="{{ files.file }}">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </tr>
+                    {% empty %}
+                      <tr>
+                         <td>没得东西看</td>
+                      </tr>
+                    {% endfor %}
+                </table>
+<p>  </p>
+    <nav style="width: 300px; margin: 0 auto;position:absolute; left:45%;right: 45%;top:100%;bottom: 0" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      {% if dlist.has_previous %}
+          <a href="?page={{ dlist.previous_page_number }}" class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+      {% endif %}
+    </li>
+    {% if dlist.number > 2 %}
+    <li class="disabled"><a class="disabled" href="#">1</a></li>
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="active"><a class="disabled" href="#">{{ dlist.number }}</a></li>
+    {% if dlist.number != dlist.paginator.num_pages %}
+    <li class="disabled"><a class="disabled" href="#">...</a></li>
+    <li class="disabled"><a class="disabled" href="#">{{ dlist.paginator.num_pages }}</a></li>
+    {% endif %}
+    {% elif dlist.number == 2 %}
+     <li class="disabled"><a class="disabled" href="#">1</a></li>
+     <li class="active"><a class="disabled" href="#">{{ dlist.number }}</a></li>
+      {% if dlist.paginator.num_pages == 2 %}
+      {% elif dlist.paginator.num_pages == 3 %}
+          <li class="disabled"><a class="disabled" href="#">3</a></li>
+      {% elif dlist.paginator.num_pages > 3 %}
+          <li class="disabled"><a class="disabled" href="#">...</a></li>
+          <li class="disabled"><a class="disabled" href="#">{{ dlist.paginator.num_pages }}</a></li>
+      {% endif %}
+    {% else  %}
+        <li class="active"><a class="disabled" href="#">{{ dlist.number }}</a></li>
+        {% if dlist.paginator.num_pages > 2 %}
+            <li class="disabled"><a class="disabled" href="#">...</a></li>
+            <li class="disabled"><a class="disabled" href="#">{{ dlist.paginator.num_pages }}</a></li>
+        {% elif dlist.paginator.num_pages == 2 %}
+            <li class="disabled"><a class="disabled" href="#">{{ dlist.paginator.num_pages }}</a></li>
+        {% endif %}
+    {% endif %}
+    <li class="page-item">
+      {% if dlist.has_next %}
+      <a href="?page={{ dlist.next_page_number }}" class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+     {% endif %}
+    </li>
+  </ul>
+</nav>
+                </div>
+
+
+</div>
+
+<br><br>  <br><br>  <br><br>
+<!-- /# content -->
+
+
+                     </div>
+                 </div>
+                 <!-- /# card -->
+             </div>
+             <!-- /# column -->
+         </div>
+         <!-- /# row -->
+    <!--</div>-->                              <!--?????????????????     change by an delete-->
+     <!-- /# main content -->
+
+<!-- /# content wrap <script src="{%static 'assets/js/lib/jquery.min.js'%}"></script>-->
+<script src="{%static 'js/jQuery.js' %}"></script>
+<!-- jquery vendor -->
+ <script type="text/javascript">
+        function yulan(data1){
+            console.log(data1);
+            var viewer = new Viewer(document.getElementById(data1), {
+                url: 'data-original'
+            });
+
+            console.log(123)
+        }
+
+ </script>
+
+    <script>
+        function setCookie(name, value, seconds) {
+            seconds = seconds || 0;
+            var expires = "";
+            if (seconds != 0) {
+                var date = new Date();
+                date.setTime(date.getTime() + (seconds * 1000));
+                expires = "; expires=" + date.toGMTString();
+            }
+            document.cookie = name + "=" + escape(value) + expires + "; path=/";
+        }
+        function quit() {
+            window.location = "/index"
+            setCookie("name","",-1)
+            setCookie("pwd","",-1)
+        }
+    </script>
+
+<script type="text/javascript">
+        function tanchu(data1) {
+            console.log(data1);
+            var neirong = document.getElementById(data1).value;
+            //var data = { "tankuang": tankuang };
+            //var neirong1 = "123.jpg";
+            console.log(neirong);
+            console.log('tanchu');
+            $.ajax({
+                url:"/mycloud/ToShare?moddal="+neirong,
+                method:"GET",
+                data:"",
+                success:function (e) {
+                    console.log(789)
+                    var cnt1 = document.getElementById("ajaxcontent");
+                    var data = e;
+                    console.log(e);
+                    $('#shareModal').modal('show');
+                    console.log(456);
+                    cnt1.innerHTML= data;
+                }
+            })
+        }
+
+</script>
+<script type="text/javascript">
+     function searchfile(){
+         console.log(123)
+            document.getElementById("search11").style.display="block";
+            document.getElementById("pic").style.display="none";
+            document.getElementById("all").style.display="none";
+            document.getElementById("video").style.display="none";
+            document.getElementById("office").style.display="none";
+            document.getElementById("other").style.display="none";
+         var content = document.getElementById("searchkuang").value;
+
+         $.ajax({
+             url:"/mycloud/search/?search="+content,
+             method:"GET",
+
+             data:"",
+             success:function(e){
+                 console.log(2222);
+                 var cnt = document.getElementById("search11");
+                 console.log(JSON.parse(e));
+                 var data = JSON.parse(e);
+
+                 cnt.innerHTML="<table>"+
+                 console.log(data[0].file);
+                 for(var i =0;i<data.length;i++){
+                     cnt.innerHTML = cnt.innerHTML + "<tr>\n"+
+     "  <div class=\"col-lg-3\">\n     "+
+     "     <div style=\"height: 300px\" class=\"card alert\">\n"+
+     "       <div class=\"card-body\">\n "+
+     "          <img style=\"height: 200px\" src= \"http://127.0.0.1:8000/static/"+ data[i].path +"\" class=\"img-rounded img-responsive\" alt=\"picture\" />"+
+                                               data[i].file+
+     "                                     <p>"+
+     "    <li style=\"display: inline\"><a href=\"/mycloud/FileDownload/"+ data[i].file +"\"> <button type=\"button\" class=\"btn btn-outline-primary\">下载</button></a>"+" </li>"+
+     "    <li style=\"display: inline\"><a href=\"/mycloud/FileDelete/"+data[i].file+"\"> <button type=\"button\" class=\"btn btn-outline-primary\">删除</button></a>"+"</li> "+
+     "    <li style=\"display: inline\"><a href=\"#\"> <button type=\"button\" class=\"btn btn-outline-primary\">分享</button></a></li>        "  +
+     "                                        </p>\n  "+
+     "                                </div>\n"+
+     "                                 </div>\n"+
+     "                             </div>\n"+
+     "                            </tr>"
+                 }
+                    cnt.innerHTML = cnt.innerHTML + "</table>"
+             }
+
+         })
+     }
+
+
+</script>
+
+<script src="{%static 'assets/js/lib/jquery.nanoscroller.min.js'%}"></script>
+<!-- nano scroller -->
+<script src="{%static 'assets/js/lib/sidebar.js'%}"></script>
+<!-- sidebar -->
+<script src="{%static 'assets/js/lib/bootstrap.min.js'%}"></script>
+<!-- bootstrap -->
+<script src="{%static 'assets/js/lib/mmc-common.js'%}"></script>
+<script src="{%static 'assets/js/lib/mmc-chat.js'%}"></script>
+<!--  Chart js -->
+<script src="{%static 'assets/js/lib/chart-js/Chart.bundle.js'%}"></script>
+<script src="{%static 'assets/js/lib/chart-js/chartjs-init.js'%}"></script>
+<!-- // Chart js -->
+<!--  Datamap -->
+<script src="{%static 'assets/js/lib/datamap/d3.min.js'%}"></script>
+<script src="{%static 'assets/js/lib/datamap/topojson.js'%}"></script>
+<script src="{%static 'assets/js/lib/datamap/datamaps.world.min.js'%}"></script>
+<script src="{%static 'assets/js/lib/datamap/datamap-init.js'%}"></script>
+<script src="{%static 'assets/lib/lobipanel/js/lobipanel.js'%}"></script>
+<!-- // Datamap -->
+<script src="{%static 'assets/js/scripts.js'%}"></script>
+<!-- scripit init-->
+<script>
+    $(document).ready(function() {
+        $('#lobipanel-custom-control').lobiPanel({
+            reload: false,
+            close: false,
+            editTitle: false
+        });
+    });
+</script>
+</body>
+
+</html>
